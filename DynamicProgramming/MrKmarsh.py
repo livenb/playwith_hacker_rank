@@ -39,13 +39,14 @@ def search_perimeter(land, left_mat, upper_mat, m, n):
                 if res < 2*(left+upper):
                     for k in reversed(xrange(1, left+1)):
                         for p in reversed(xrange(1, upper+1)):
-                            if (not land[-i-p][-j-k]) and \
-                              (upper_mat[-i][-j-k] >= p) and\
-                              (left_mat[-i-p][-j] >= k):
-                                temp = 2*(k+p)
-                                res = max(res, temp)
-                                if res == 2 * (m+n-2):
-                                    return res
+                            if res < 2*(k+p):
+                                if (not land[-i-p][-j-k]) and\
+                                  (upper_mat[-i][-j-k] >= p) and\
+                                  (left_mat[-i-p][-j] >= k):
+                                    temp = 2*(k+p)
+                                    res = max(res, temp)
+                                    if res == 2 * (m+n-2):
+                                        return res
     if res == 0:
         return 'impossible'
     else:
