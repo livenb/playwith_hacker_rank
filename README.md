@@ -1,2 +1,2 @@
-# playwith_hacker_rank
-This is my personal solution for hacker rank questions
+# play with hackerrank
+This is my personal solution for hackerrank questions
